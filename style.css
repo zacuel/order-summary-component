@@ -1,0 +1,198 @@
+:root{
+    --clr-primary-100: hsl(225, 100%, 94%); 
+    --clr-primary-600: hsl(245, 75%, 52%);
+
+    --clr-neutral-100: hsl(225, 100%, 98%);
+    --clr-neutral-300: hsl(224, 23%, 55%);
+    --clr-neutral-600: hsl(223,47%,23%);
+
+    --clr-select-100: #4a45ff; 
+
+
+
+    --fs-paragraph: 16px; 
+    --fs-heading: 28px; 
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+    --fw-bolder:900; 
+
+--bg-image: url(images/pattern-background-mobile.svg);
+--full-item-width: 90%;
+--full-item-height: 620px;
+}
+@media (min-width: 400px) {
+    :root{
+    --bg-image: url(images/pattern-background-desktop.svg);
+    --full-item-width: 380px; 
+    }
+}
+
+/* The following is my CSS RESET */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit; /*font inherit strips away all font sizes and font weights*/
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* This was changed, kepow explains why at 18:15 in the first video;
+fixes a double scrollbar for one */
+html, body{  
+    height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with, svg had to be added */
+img,
+picture,
+svg {
+  max-width: 100%; /* does this prevent images from exceeding the screen?*/
+  display: block;
+}
+
+/* unneeded, font:inherent applies to all things */
+/* Inherit fonts for inputs and buttons */
+/* input,
+button,
+textarea,
+select {
+  font: inherit;
+} */
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body{
+  background-color: var(--clr-neutral-100);
+    background-image: var(--bg-image);
+    background-repeat: no-repeat;
+    background-size: auto;
+    font-family: 'red hat display', sans-serif;
+    font-weight: var(--fw-regular);
+    
+}
+.outer-container{
+    width: var(--full-item-width);
+    height: var(--full-item-height);
+    margin: 40px auto; 
+    border-radius: 20px;
+    overflow: hidden;
+    border:solid 1px var(--clr-primary-100);
+    background-color: #FEFEFF;
+    box-shadow: 0px 20px 8px var(--clr-primary-100);
+
+}
+.main-heading{
+  text-align: center;
+  font-size: var(--fs-heading);
+  font-weight: var(--fw-bolder);
+  margin-top: 15px; 
+  /* border: 5px black solid; */
+}
+
+.winning-text{
+  text-align: center;
+  font-size: var(--fs-paragraph);
+  font-weight: var(--fw-regular);
+  margin-inline: 10%;
+}
+.chosen-plan-card{
+  background-color: var(--clr-neutral-100);
+  margin: 30px;
+  padding: 20px; 
+  display: flex; 
+  border-radius: 10px;
+  gap: 10px; 
+  align-items: center;
+}
+.plan-price{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2
+}
+.change-plan{
+  font-weight: var(--fw-bolder);
+
+}
+
+.button{
+  width: 300px; 
+  margin-inline: auto;
+  text-align: center;
+  padding: 10px; 
+  margin-top:20px; 
+  font-weight: var(--fw-bold);
+}
+.proceed{
+  background-color: var(--clr-primary-600);
+  color: white; 
+  margin-inline: auto;  
+  text-align: center; 
+  border-radius: 10px; 
+  box-shadow: 0px 20px 8px var(--clr-primary-100);
+  }
+
+  .cancel{
+    margin-top: 30px; 
+  }
+
+
+  .cancel-link{
+    color: black; 
+    text-decoration: none;
+  }
+
+
+  a:hover{
+    cursor: pointer;
+    background-color: var(--clr-select-100);
+    color: var(--clr-select-100);
+  }
+
+  .proceed:active{
+    background-color: var(--clr-select-100);
+  }
+
+  .change-plan:active{
+    color: var(--clr-select-100);
+  }
